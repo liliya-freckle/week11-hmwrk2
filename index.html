@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agu+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css">
+    <title>To do list</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>ToDo List</h2>
+        <input type="text" placeholder="Введите задачу" id="input">
+        <button id="addTask" onclick="createTask()">Добавить</button>
+        <ul id=taskList>
+
+        </ul>
+    </div>
+    <script>
+        const taskInput = document.getElementById(`input`)
+        const addTask = document.getElementById(`assTask`)
+        const taskList = document.getElementById(`taskList`)
+
+        function createTask() {
+            const textInputValue = taskInput.value.trim();
+            const newElement = document.createElement(`li`);
+            newElement.textContent = textInputValue;
+            taskList.append(newElement);
+            document.getElementById(`input`).value = ``;
+        }
+        createTask()
+
+
+        const list = document.getElementById(`taskList`)
+
+        list.addEventListener(`click`, function checkTask(event) {
+            if (event.target.tagName === `LI`) {
+                event.target.classList.toggle('active');
+            }
+            console.log(`are u OK?`)
+        });
+
+        addTask.addEventListener(`click`, createTask)
+
+
+
+
+
+    </script>
+</body>
+
+</html>
