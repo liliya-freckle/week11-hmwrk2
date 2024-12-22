@@ -18,10 +18,9 @@
         <h2>ToDo List</h2>
         <input type="text" placeholder="Введите задачу" id="input">
         <button id="addTask" onclick="createTask()">Добавить</button>
-        <ul id=taskList>
-
-        </ul>
+        <ul id=taskList></ul>
     </div>
+
     <script>
         const taskInput = document.getElementById(`input`)
         const addTask = document.getElementById(`assTask`)
@@ -38,7 +37,6 @@
 
 
         const list = document.getElementById(`taskList`)
-
         list.addEventListener(`click`, function checkTask(event) {
             if (event.target.tagName === `LI`) {
                 event.target.classList.toggle('active');
@@ -47,10 +45,6 @@
         });
 
         addTask.addEventListener(`click`, createTask)
-
-
-
-
 
     </script>
 </body>
